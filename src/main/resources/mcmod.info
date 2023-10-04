@@ -6,7 +6,7 @@
 		"version": "${version}",
 		"credits": "Team CoFH",
 		"logoFile": "assets/cofh/textures/logo.png",
-		"mcversion": "${mc_version}",
+		"mcversion": "${mcversion}",
 		"url": "http://www.teamcofh.com",
 		"updateUrl": "",
 		"authorList": [ "Team CoFH" ],
