@@ -36,7 +36,7 @@ public class CoreUtils {
 	/* MOD UTILS */
 	public static String getModName(Item item) {
 
-		return item.getRegistryName().getResourceDomain();
+		return item.getRegistryName().getNamespace();
 	}
 
 	/* PLAYER UTILS */
@@ -80,7 +80,7 @@ public class CoreUtils {
 
 	public static boolean isRedstonePowered(World world, BlockPos pos) {
 
-		if (world.isBlockIndirectlyGettingPowered(pos) > 0) {
+		if (world.getRedstonePowerFromNeighbors(pos) > 0) {
 			return true;
 		}
 		for (EnumFacing face : EnumFacing.VALUES) {

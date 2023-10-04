@@ -24,16 +24,16 @@ public abstract class BlockCore extends Block {
 	}
 
 	@Override
-	public Block setUnlocalizedName(String name) {
+	public Block setTranslationKey(String name) {
 
 		this.name = name;
 		name = modName + "." + name;
-		return super.setUnlocalizedName(name);
+		return super.setTranslationKey(name);
 	}
 
-	public String getUnlocalizedName(ItemStack stack) {
+	public String getTranslationKey(ItemStack stack) {
 
-		return getUnlocalizedName();
+		return getTranslationKey();
 	}
 
 	public EnumRarity getRarity(ItemStack stack) {

@@ -137,7 +137,7 @@ public class SecurityHelper {
 		stack.getTagCompound().removeTag("OwnerUUID");
 		stack.getTagCompound().removeTag("Owner");
 
-		if (stack.getTagCompound().hasNoTags()) {
+		if (stack.getTagCompound().isEmpty()) {
 			stack.setTagCompound(null);
 		}
 		return stack;

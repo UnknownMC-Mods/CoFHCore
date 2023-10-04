@@ -151,7 +151,7 @@ public class CommandHand implements ISubCommand {
 				ITextComponent component = new TextComponentString("");
 				component.appendSibling(stack.getTextComponent());
 				if (stack.hasDisplayName()) {
-					String s = stack.getItem().getUnlocalizedName(stack);
+					String s = stack.getItem().getTranslationKey(stack);
 					if (!I18n.canTranslate(s)) {
 						s += ".name";
 					}

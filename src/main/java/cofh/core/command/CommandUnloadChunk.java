@@ -44,7 +44,7 @@ public class CommandUnloadChunk implements ISubCommand {
 		}
 		EntityPlayerMP player = (EntityPlayerMP) sender;
 		RayTraceResult trace = RayTracer.retrace(player, 100);
-		Chunk chunk = player.world.getChunkFromBlockCoords(trace.getBlockPos());
+		Chunk chunk = player.world.getChunk(trace.getBlockPos());
 		player.getServerWorld().getChunkProvider().queueUnload(chunk);
 
 		CommandHandler.logAdminCommand(sender, this, "chat.cofh.command.unloadchunk.success", chunk.x, chunk.z);

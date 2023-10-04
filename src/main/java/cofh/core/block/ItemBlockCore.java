@@ -36,9 +36,9 @@ public class ItemBlockCore extends ItemBlock {
 	}
 
 	@Override
-	public String getUnlocalizedName(ItemStack stack) {
+	public String getTranslationKey(ItemStack stack) {
 
-		return blockCore.getUnlocalizedName(stack);
+		return blockCore.getTranslationKey(stack);
 	}
 
 	@Override
@@ -50,7 +50,7 @@ public class ItemBlockCore extends ItemBlock {
 	@Override
 	public String getItemStackDisplayName(ItemStack stack) {
 
-		return StringHelper.localize(getUnlocalizedName(stack));
+		return StringHelper.localize(getTranslationKey(stack));
 	}
 
 	@Override

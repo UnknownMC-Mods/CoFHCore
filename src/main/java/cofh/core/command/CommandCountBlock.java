@@ -132,7 +132,7 @@ public class CommandCountBlock implements ISubCommand {
 				if (blockRaw.equals("*fluid")) {
 					for (int x = xS; x <= xL; ++x) {
 						for (int z = zS; z <= zL; ++z) {
-							Chunk chunk = world.getChunkFromBlockCoords(new BlockPos(x, 0, z));
+							Chunk chunk = world.getChunk(new BlockPos(x, 0, z));
 							int cX = x & 15, cZ = z & 15;
 							for (int y = yS; y <= yL; ++y) {
 								BlockPos pos = new BlockPos(x, y, z);
@@ -146,7 +146,7 @@ public class CommandCountBlock implements ISubCommand {
 				} else if (blockRaw.equals("*tree")) {
 					for (int x = xS; x <= xL; ++x) {
 						for (int z = zS; z <= zL; ++z) {
-							Chunk chunk = world.getChunkFromBlockCoords(new BlockPos(x, 0, z));
+							Chunk chunk = world.getChunk(new BlockPos(x, 0, z));
 							int cX = x & 15, cZ = z & 15;
 							for (int y = yS; y <= yL; ++y) {
 								BlockPos pos = new BlockPos(x, y, z);
@@ -160,7 +160,7 @@ public class CommandCountBlock implements ISubCommand {
 				} else if (blockRaw.startsWith("*repl")) {
 					for (int x = xS; x <= xL; ++x) {
 						for (int z = zS; z <= zL; ++z) {
-							Chunk chunk = world.getChunkFromBlockCoords(new BlockPos(x, 0, z));
+							Chunk chunk = world.getChunk(new BlockPos(x, 0, z));
 							int cX = x & 15, cZ = z & 15;
 							for (int y = yS; y <= yL; ++y) {
 								BlockPos pos = new BlockPos(x, y, z);
@@ -174,7 +174,7 @@ public class CommandCountBlock implements ISubCommand {
 				} else if (blockRaw.equals("*stone")) {
 					for (int x = xS; x <= xL; ++x) {
 						for (int z = zS; z <= zL; ++z) {
-							Chunk chunk = world.getChunkFromBlockCoords(new BlockPos(x, 0, z));
+							Chunk chunk = world.getChunk(new BlockPos(x, 0, z));
 							int cX = x & 15, cZ = z & 15;
 							for (int y = yS; y <= yL; ++y) {
 								BlockPos pos = new BlockPos(x, y, z);
@@ -189,7 +189,7 @@ public class CommandCountBlock implements ISubCommand {
 				} else if (blockRaw.equals("*rock")) {
 					for (int x = xS; x <= xL; ++x) {
 						for (int z = zS; z <= zL; ++z) {
-							Chunk chunk = world.getChunkFromBlockCoords(new BlockPos(x, 0, z));
+							Chunk chunk = world.getChunk(new BlockPos(x, 0, z));
 							int cX = x & 15, cZ = z & 15;
 							for (int y = yS; y <= yL; ++y) {
 								BlockPos pos = new BlockPos(x, y, z);
@@ -203,7 +203,7 @@ public class CommandCountBlock implements ISubCommand {
 				} else if (blockRaw.equals("*sand")) {
 					for (int x = xS; x <= xL; ++x) {
 						for (int z = zS; z <= zL; ++z) {
-							Chunk chunk = world.getChunkFromBlockCoords(new BlockPos(x, 0, z));
+							Chunk chunk = world.getChunk(new BlockPos(x, 0, z));
 							int cX = x & 15, cZ = z & 15;
 							for (int y = yS; y <= yL; ++y) {
 								BlockPos pos = new BlockPos(x, y, z);
@@ -217,7 +217,7 @@ public class CommandCountBlock implements ISubCommand {
 				} else if (blockRaw.equals("*dirt")) {
 					for (int x = xS; x <= xL; ++x) {
 						for (int z = zS; z <= zL; ++z) {
-							Chunk chunk = world.getChunkFromBlockCoords(new BlockPos(x, 0, z));
+							Chunk chunk = world.getChunk(new BlockPos(x, 0, z));
 							int cX = x & 15, cZ = z & 15;
 							for (int y = yS; y <= yL; ++y) {
 								BlockPos pos = new BlockPos(x, y, z);
@@ -232,7 +232,7 @@ public class CommandCountBlock implements ISubCommand {
 				} else if (blockRaw.startsWith("*plant")) {
 					for (int x = xS; x <= xL; ++x) {
 						for (int z = zS; z <= zL; ++z) {
-							Chunk chunk = world.getChunkFromBlockCoords(new BlockPos(x, 0, z));
+							Chunk chunk = world.getChunk(new BlockPos(x, 0, z));
 							int cX = x & 15, cZ = z & 15;
 							for (int y = yS; y <= yL; ++y) {
 								BlockPos pos = new BlockPos(x, y, z);
@@ -247,7 +247,7 @@ public class CommandCountBlock implements ISubCommand {
 				} else if (blockRaw.equals("*fire")) {
 					for (int x = xS; x <= xL; ++x) {
 						for (int z = zS; z <= zL; ++z) {
-							Chunk chunk = world.getChunkFromBlockCoords(new BlockPos(x, 0, z));
+							Chunk chunk = world.getChunk(new BlockPos(x, 0, z));
 							int cX = x & 15, cZ = z & 15;
 							for (int y = yS; y <= yL; ++y) {
 								BlockPos pos = new BlockPos(x, y, z);
@@ -274,7 +274,7 @@ public class CommandCountBlock implements ISubCommand {
 			}
 			for (int x = xS; x <= xL; ++x) {
 				for (int z = zS; z <= zL; ++z) {
-					Chunk chunk = world.getChunkFromBlockCoords(new BlockPos(x, 0, z));
+					Chunk chunk = world.getChunk(new BlockPos(x, 0, z));
 					int cX = x & 15, cZ = z & 15;
 					for (int y = yS; y <= yL; ++y) {
 						BlockPos pos = new BlockPos(x, y, z);

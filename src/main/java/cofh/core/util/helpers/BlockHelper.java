@@ -103,12 +103,12 @@ public final class BlockHelper {
 
 	public static int getHighestY(World world, int x, int z) {
 
-		return world.getChunkFromBlockCoords(new BlockPos(x, 0, z)).getTopFilledSegment() + 16;
+		return world.getChunk(new BlockPos(x, 0, z)).getTopFilledSegment() + 16;
 	}
 
 	public static int getSurfaceBlockY(World world, int x, int z) {
 
-		int y = world.getChunkFromBlockCoords(new BlockPos(x, 0, z)).getTopFilledSegment() + 16;
+		int y = world.getChunk(new BlockPos(x, 0, z)).getTopFilledSegment() + 16;
 
 		BlockPos pos;
 		IBlockState state;
@@ -127,7 +127,7 @@ public final class BlockHelper {
 
 	public static int getTopBlockY(World world, int x, int z) {
 
-		int y = world.getChunkFromBlockCoords(new BlockPos(x, 0, z)).getTopFilledSegment() + 16;
+		int y = world.getChunk(new BlockPos(x, 0, z)).getTopFilledSegment() + 16;
 
 		BlockPos pos;
 		IBlockState state;

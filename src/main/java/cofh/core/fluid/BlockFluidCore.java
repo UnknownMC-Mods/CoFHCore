@@ -41,7 +41,7 @@ public abstract class BlockFluidCore extends BlockFluidClassic implements IIniti
 		this.name = name;
 		this.modName = modName;
 
-		setUnlocalizedName(modName + ".fluid." + name);
+		setTranslationKey(modName + ".fluid." + name);
 		displacements.put(this, false);
 	}
 

@@ -164,22 +164,22 @@ public class ItemMulti extends ItemCore implements IModelRegister {
 	}
 
 	@Override
-	public String getUnlocalizedName(ItemStack stack) {
+	public String getTranslationKey(ItemStack stack) {
 
 		int i = ItemHelper.getItemDamage(stack);
 		if (!itemMap.containsKey(i)) {
 			return "item.invalid";
 		}
 		ItemEntry item = itemMap.get(i);
-		return getUnlocalizedName() + "." + item.name;
+		return getTranslationKey() + "." + item.name;
 	}
 
 	@Override
-	public Item setUnlocalizedName(String name) {
+	public Item setTranslationKey(String name) {
 
 		this.name = name;
 		name = modName + "." + name;
-		return super.setUnlocalizedName(name);
+		return super.setTranslationKey(name);
 	}
 
 	/* IModelRegister */

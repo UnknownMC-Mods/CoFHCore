@@ -96,7 +96,7 @@ public abstract class ItemToolCore extends ItemTool {
 		}
 		if (!world.isRemote) {
 			if (block.removedByPlayer(state, world, pos, player, !player.capabilities.isCreativeMode)) {
-				block.onBlockDestroyedByPlayer(world, pos, state);
+				block.onPlayerDestroy(world, pos, state);
 				if (!player.capabilities.isCreativeMode) {
 					block.harvestBlock(world, player, pos, state, world.getTileEntity(pos), player.getHeldItemMainhand());
 					if (xpToDrop > 0) {
@@ -108,7 +108,7 @@ public abstract class ItemToolCore extends ItemTool {
 			playerMP.connection.sendPacket(new SPacketBlockChange(world, pos));
 		} else {
 			if (block.removedByPlayer(state, world, pos, player, !player.capabilities.isCreativeMode)) {
-				block.onBlockDestroyedByPlayer(world, pos, state);
+				block.onPlayerDestroy(world, pos, state);
 			}
 			Minecraft.getMinecraft().getConnection().sendPacket(new CPacketPlayerDigging(CPacketPlayerDigging.Action.START_DESTROY_BLOCK, pos, Minecraft.getMinecraft().objectMouseOver.sideHit));
 		}
@@ -150,13 +150,13 @@ public abstract class ItemToolCore extends ItemTool {
 		if (player.capabilities.isCreativeMode) {
 			if (!world.isRemote) {
 				if (block.removedByPlayer(state, world, pos, player, false)) {
-					block.onBlockDestroyedByPlayer(world, pos, state);
+					block.onPlayerDestroy(world, pos, state);
 				}
 				// always send block update to client
 				playerMP.connection.sendPacket(new SPacketBlockChange(world, pos));
 			} else {
 				if (block.removedByPlayer(state, world, pos, player, false)) {
-					block.onBlockDestroyedByPlayer(world, pos, state);
+					block.onPlayerDestroy(world, pos, state);
 				}
 				Minecraft.getMinecraft().getConnection().sendPacket(new CPacketPlayerDigging(CPacketPlayerDigging.Action.START_DESTROY_BLOCK, pos, Minecraft.getMinecraft().objectMouseOver.sideHit));
 			}
@@ -164,7 +164,7 @@ public abstract class ItemToolCore extends ItemTool {
 		// Otherwise
 		if (!world.isRemote) {
 			if (block.removedByPlayer(state, world, pos, player, true)) {
-				block.onBlockDestroyedByPlayer(world, pos, state);
+				block.onPlayerDestroy(world, pos, state);
 				block.harvestBlock(world, player, pos, state, world.getTileEntity(pos), player.getHeldItemMainhand());
 				if (xpToDrop > 0) {
 					block.dropXpOnBlockBreak(world, pos, xpToDrop);
@@ -174,7 +174,7 @@ public abstract class ItemToolCore extends ItemTool {
 			playerMP.connection.sendPacket(new SPacketBlockChange(world, pos));
 		} else {
 			if (block.removedByPlayer(state, world, pos, player, true)) {
-				block.onBlockDestroyedByPlayer(world, pos, state);
+				block.onPlayerDestroy(world, pos, state);
 			}
 			Minecraft.getMinecraft().getConnection().sendPacket(new CPacketPlayerDigging(CPacketPlayerDigging.Action.START_DESTROY_BLOCK, pos, Minecraft.getMinecraft().objectMouseOver.sideHit));
 		}

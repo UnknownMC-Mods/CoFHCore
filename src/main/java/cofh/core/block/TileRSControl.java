@@ -53,7 +53,7 @@ public abstract class TileRSControl extends TileNameable implements IRedstoneCon
 	public void onNeighborBlockChange() {
 
 		wasPowered = isPowered;
-		powerLevel = world.isBlockIndirectlyGettingPowered(pos);
+		powerLevel = world.getRedstonePowerFromNeighbors(pos);
 		isPowered = powerLevel > 0;
 
 		if (wasPowered != isPowered && sendRedstoneUpdates()) {
@@ -180,7 +180,7 @@ public abstract class TileRSControl extends TileNameable implements IRedstoneCon
 	@SideOnly (Side.CLIENT)
 	public ISound getSound() {
 
-		return new SoundTile(this, getSoundEvent(), getVolume(), 1.0F, true, 0, new Vec3d(pos).addVector(0.5, 0.5, 0.5));
+		return new SoundTile(this, getSoundEvent(), getVolume(), 1.0F, true, 0, new Vec3d(pos).add(0.5, 0.5, 0.5));
 	}
 
 	@Override

@@ -58,7 +58,7 @@ public class CommandTPX implements ISubCommand {
 							player.setPositionAndUpdate(playerSender.posX, playerSender.posY, playerSender.posZ);
 							CommandHandler.logAdminCommand(sender, this, "chat.cofh.command.tpx.otherToSelf", player.getName(), player.posX, player.posY, player.posZ);
 						} else {
-							EntityHelper.transferPlayerToDimension(player, playerSender.dimension, playerSender.mcServer.getPlayerList());
+							EntityHelper.transferPlayerToDimension(player, playerSender.dimension, playerSender.server.getPlayerList());
 							player.setPositionAndUpdate(playerSender.posX, playerSender.posY, playerSender.posZ);
 							CommandHandler.logAdminCommand(sender, this, "chat.cofh.command.tpx.dimensionOtherToSelf", player.getName(), player.world.provider.getDimensionType().getName(), player.posX, player.posY, player.posZ);
 						}
@@ -81,7 +81,7 @@ public class CommandTPX implements ISubCommand {
 					playerSender.getPassengers().forEach(Entity::dismountRidingEntity);
 					playerSender.dismountRidingEntity();
 					if (playerSender.dimension != dimension) {
-						EntityHelper.transferPlayerToDimension(playerSender, dimension, playerSender.mcServer.getPlayerList());
+						EntityHelper.transferPlayerToDimension(playerSender, dimension, playerSender.server.getPlayerList());
 					}
 					playerSender.setPositionAndUpdate(playerSender.posX, playerSender.posY, playerSender.posZ);
 					CommandHandler.logAdminCommand(sender, this, "chat.cofh.command.tpx.dimensionSelf", playerSender.world.provider.getDimensionType().getName(), playerSender.posX, playerSender.posY, playerSender.posZ);
@@ -98,7 +98,7 @@ public class CommandTPX implements ISubCommand {
 							player.setPositionAndUpdate(otherPlayer.posX, otherPlayer.posY, otherPlayer.posZ);
 							CommandHandler.logAdminCommand(sender, this, "chat.cofh.command.tpx.otherTo", player.getName(), otherPlayer.getName(), player.posX, player.posY, player.posZ);
 						} else {
-							EntityHelper.transferPlayerToDimension(player, otherPlayer.dimension, otherPlayer.mcServer.getPlayerList());
+							EntityHelper.transferPlayerToDimension(player, otherPlayer.dimension, otherPlayer.server.getPlayerList());
 							player.setPositionAndUpdate(otherPlayer.posX, otherPlayer.posY, otherPlayer.posZ);
 							CommandHandler.logAdminCommand(sender, this, "chat.cofh.command.tpx.dimensionOtherTo", player.getName(), otherPlayer.getName(), player.world.provider.getDimensionType().getName(), player.posX, player.posY, player.posZ);
 						}
@@ -121,7 +121,7 @@ public class CommandTPX implements ISubCommand {
 					player.getPassengers().forEach(Entity::dismountRidingEntity);
 					player.dismountRidingEntity();
 					if (player.dimension != dimension) {
-						EntityHelper.transferPlayerToDimension(player, dimension, player.mcServer.getPlayerList());
+						EntityHelper.transferPlayerToDimension(player, dimension, player.server.getPlayerList());
 					}
 					player.setPositionAndUpdate(player.posX, player.posY, player.posZ);
 					CommandHandler.logAdminCommand(sender, this, "chat.cofh.command.tpx.dimensionOther", player.getName(), player.world.provider.getDimensionType().getName(), player.posX, player.posY, player.posZ);
@@ -155,7 +155,7 @@ public class CommandTPX implements ISubCommand {
 					playerSender.getPassengers().forEach(Entity::dismountRidingEntity);
 					playerSender.dismountRidingEntity();
 					if (playerSender.dimension != dimension) {
-						EntityHelper.transferPlayerToDimension(playerSender, dimension, playerSender.mcServer.getPlayerList());
+						EntityHelper.transferPlayerToDimension(playerSender, dimension, playerSender.server.getPlayerList());
 					}
 					playerSender.setPositionAndUpdate(playerSender.posX, playerSender.posY, playerSender.posZ);
 					CommandHandler.logAdminCommand(sender, this, "chat.cofh.command.tpx.dimensionSelf", playerSender.world.provider.getDimensionType().getName(), playerSender.posX, playerSender.posY, playerSender.posZ);
@@ -172,7 +172,7 @@ public class CommandTPX implements ISubCommand {
 				player.getPassengers().forEach(Entity::dismountRidingEntity);
 				player.dismountRidingEntity();
 				if (player.dimension != dimension) {
-					EntityHelper.transferPlayerToDimension(player, dimension, player.mcServer.getPlayerList());
+					EntityHelper.transferPlayerToDimension(player, dimension, player.server.getPlayerList());
 				}
 				player.setPositionAndUpdate(CommandBase.parseDouble(player.posX, arguments[2], true), CommandBase.parseDouble(player.posY, arguments[3], true), CommandBase.parseDouble(player.posZ, arguments[4], true));
 				CommandHandler.logAdminCommand(sender, this, "chat.cofh.command.tpx.dimensionOther", player.getName(), player.world.provider.getDimensionType().getName(), player.posX, player.posY, player.posZ);

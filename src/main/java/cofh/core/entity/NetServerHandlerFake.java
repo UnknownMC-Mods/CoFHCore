@@ -110,7 +110,7 @@ public class NetServerHandlerFake extends NetHandlerPlayServer {
 		}
 
 		@Override
-		public void checkDisconnected() {
+		public void handleDisconnection() {
 
 		}
 
